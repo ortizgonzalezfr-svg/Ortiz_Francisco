@@ -1,35 +1,77 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Inicio{% endblock %}
 
 {% block content %}
 
-<div class="container mt-4">
+<div class="container py-5">
 
-    <h1>Temas</h1>
+    <div class="inicio-titulo text-center">
+        <h1>Explora nuestros temas</h1>
+        <p>Selecciona una categoría para conocer más.</p>
+    </div>
 
     {% if temas %}
-        <div class="row">
+
+        <div class="row justify-content-center g-4">
+
             {% for tema in temas %}
 
                 <div class="col-md-6">
-                    <div class="card mt-3">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ tema.nombre }}</h5>
-                            <p class="card-text">{{ tema.descripcion }}</p>
 
-                            {% if tema.nombre == 'Ciberseguridad' %}
-                                <a href="{% url 'inicio_ortiz:ciberseguridad' %}" class="btn btn-primary">Ver tema</a>
-                            {% else %}
-                                <a href="{% url 'inicio_ortiz:videojuegos' %}" class="btn btn-primary">Ver tema</a>
-                            {% endif %}
+                    {% if tema.nombre == 'Ciberseguridad' %}
+
+                        <div class="card tema-card tema-imagen h-100"
+                             style="background-image: url('{% static 'images/ciber1.png' %}');">
+
+                    {% else %}
+
+                        <div class="card tema-card tema-imagen h-100"
+                             style="background-image: url('{% static 'images/videojuego1.png' %}');">
+
+                    {% endif %}
+
+                            <div class="tema-overlay">
+
+                                <span class="tema-numero">
+                                    0{{ forloop.counter }}
+                                </span>
+
+                                <h2 class="card-title">
+                                    {{ tema.nombre }}
+                                </h2>
+
+                                <p class="card-text">
+                                    {{ tema.descripcion }}
+                                </p>
+
+                                {% if tema.nombre == 'Ciberseguridad' %}
+
+                                    <a href="{% url 'inicio_ortiz:ciberseguridad' %}"
+                                       class="btn btn-primary">
+                                        Explorar tema
+                                    </a>
+
+                                {% else %}
+
+                                    <a href="{% url 'inicio_ortiz:videojuegos' %}"
+                                       class="btn btn-primary">
+                                        Explorar tema
+                                    </a>
+
+                                {% endif %}
+
+                            </div>
 
                         </div>
-                    </div>
+
                 </div>
 
             {% endfor %}
+
         </div>
+
     {% endif %}
 
 </div>

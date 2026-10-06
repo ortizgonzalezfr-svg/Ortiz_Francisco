@@ -5,20 +5,25 @@
 
 {% block content %}
 
-<div class="container mt-4" style="max-width: 700px;">
+<div class="container mt-5" style="max-width: 800px;">
 
-    <h1>Videojuegos</h1>
+    <div class="text-center mb-4">
+        <h1>Videojuegos</h1>
+        <p class="lead">
+            Conoce el mundo de los videojuegos.
+        </p>
+    </div>
 
     <div id="carouselVideojuegos" class="carousel slide">
 
         <div class="carousel-inner">
 
             <div class="carousel-item active">
-                <img src="{% static 'images/videojuego1.png' %}" class="d-block w-100 rounded" alt="Videojuego 1">
+                <img src="{% static 'images/videojuego1.png' %}" class="d-block w-100" alt="Videojuego 1">
             </div>
 
             <div class="carousel-item">
-                <img src="{% static 'images/videojuego2.png' %}" class="d-block w-100 rounded" alt="Videojuego 2">
+                <img src="{% static 'images/videojuego2.png' %}" class="d-block w-100" alt="Videojuego 2">
             </div>
 
         </div>
@@ -31,6 +36,12 @@
             <span class="carousel-control-next-icon"></span>
         </button>
 
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{% url 'inicio_ortiz:inicio' %}" class="btn btn-primary">
+            Volver al inicio
+        </a>
     </div>
 
 </div>

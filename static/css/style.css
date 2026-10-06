@@ -1,41 +1,157 @@
 body {
-    background-color: #f4f6f8;
+    background-color: #0f172a;
+    color: #f8fafc;
+    min-height: 100vh;
 }
 
 .navbar {
-    margin-bottom: 30px;
+    background-color: #0b1120 !important;
+    padding: 18px 0;
+    border-bottom: 1px solid #263247;
+    margin-bottom: 0;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 35px;
+.navbar-brand {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: bold;
 }
 
-.card {
-    border-radius: 12px;
-    min-height: 220px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+.nav-link {
+    color: #cbd5e1;
+    margin-left: 20px;
 }
 
-.card-body {
-    padding: 30px;
+.nav-link:hover {
+    color: #ffffff;
+}
+
+.inicio-titulo {
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+.inicio-titulo h1 {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.inicio-titulo p {
+    color: #94a3b8;
+    font-size: 20px;
+}
+
+.tema-card {
+    border: 1px solid #334155;
+    border-radius: 16px;
+    min-height: 360px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease;
+}
+
+.tema-card:hover {
+    transform: translateY(-10px);
+    border-color: #64748b;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.tema-imagen {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tema-overlay {
+    min-height: 360px;
+    padding: 35px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(
+        to top,
+        rgba(5, 10, 20, 0.98),
+        rgba(5, 10, 20, 0.70),
+        rgba(5, 10, 20, 0.15)
+    );
 }
 
-.card .btn {
-    margin-top: auto;
+.tema-numero {
+    color: #cbd5e1;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.tema-card .card-title {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.tema-card .card-text {
+    color: #e2e8f0;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.tema-card .btn {
     width: fit-content;
+    padding: 10px 22px;
+    border-radius: 8px;
 }
 
 .carousel {
-    border-radius: 12px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
 .carousel img {
     width: 100%;
     height: 400px;
     object-fit: cover;
+}
+
+.lead {
+    color: #94a3b8;
+}
+
+h1 {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.btn-dark {
+    background-color: #1e293b;
+    border-color: #334155;
+}
+
+@media (max-width: 768px) {
+    .inicio-titulo {
+        margin-top: 20px;
+    }
+
+    .inicio-titulo h1 {
+        font-size: 36px;
+    }
+
+    .tema-card {
+        min-height: 300px;
+    }
+
+    .tema-overlay {
+        min-height: 300px;
+        padding: 25px;
+    }
+
+    .carousel img {
+        height: 300px;
+    }
+
+    .nav-link {
+        margin-left: 0;
+    }
 }
